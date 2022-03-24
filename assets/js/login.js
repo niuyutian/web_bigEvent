@@ -42,12 +42,10 @@ $(function(){
             method:'POST',
             data: $(this).serialize(),
             success:function(res){
-                console.log(res);
                 if(res.status !==0){
                     return layer.msg('登录失败!')
                 }
                 localStorage.setItem('token',res.token)
-                console.log(res.token);
                 layer.msg('登录成功!')
                 location.href= '/index.html'
             }
